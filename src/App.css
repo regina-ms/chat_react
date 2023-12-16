@@ -1,38 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.message-list {
+  border: 1px solid lightgray;
+  overflow: auto;
+  width: 800px;
+  height: 400px;
+  margin: 50px auto 25px;
+  list-style-type: none;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  gap: 20px
+}
+
+.message-list li {
+  max-width: 70%;
+  text-align: left;
+  background-color: aqua;
+  padding: 25px;
+  border-radius: 40px;
+  word-wrap: break-word;
+}
+
+.message-list .my-message {
+  align-self: flex-end;
+  background-color: red;
+}
+
+.App button {
+  cursor: pointer;
+}
+
+.App .loading:disabled {
+  cursor: default;
+  opacity: .8;
+}
+
+.scroll-btn {
+  position: relative;
+  right: -330px;
+  bottom: 60px;
+  border: none;
+  border-radius: 50%;
+  padding: 20px;
+  background-color: tomato;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  position: relative;
+  width: 800px;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form input {
+  width: 100%;
+  padding: 10px 50px 10px 10px;
+}
+
+form button {
+  position: absolute;
+  top: 50%;
+  transform:translate(-102%, -51%);
+  background-color: lightgray;
+  border: none;
+  padding: 11px;
 }
